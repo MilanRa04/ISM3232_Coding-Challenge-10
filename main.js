@@ -36,3 +36,18 @@ purchaseButton.addEventListener('click', function () {
         alert('Sorry, this product is out of stock.');
     }
 });
+
+// Task 5: Implement Event Delegation for Dynamic Product List
+document.body.addEventListener('change', function(event) {
+    if (event.target.matches('.product-size')) {
+        const selectedOption = event.target.options[event.target.selectedIndex];
+        const newPrice = selectedOption.getAttribute('data-price');
+        const stock = selectedOption.getAttribute('data-stock');
+
+        const priceDisplay = event.target.closest('.product').querySelector('.product-price');
+        const purchaseButton = event.target.closest('.product').querySelector('.purchase-button');
+
+        priceDisplay.textContent = `$${newPrice}.00`;
+        purchaseButton.disabled = stock <= 0;
+    }
+});
