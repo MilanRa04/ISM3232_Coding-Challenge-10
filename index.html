@@ -3,10 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript Basics Challenge</title>
+    <title>Product Page</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>JavaScript Basics Coding Challenge</h1>
-    <script src="library_management.js"></script>
+    <div class="product">
+        <h2 id="product-name">Stylish T-Shirt</h2>
+        <p id="product-price">$20.00</p>
+
+        <label for="product-size">Choose a size:</label>
+        <select id="product-size">
+            <option value="small" data-price="20" data-stock="10">Small: In Stock</option>
+            <option value="medium" data-price="25" data-stock="5">Medium: In Stock</option>
+            <option value="large" data-price="30" data-stock="0">Large: Out of Stock</option>
+        </select>
+
+        <button id="purchase-button">Purchase</button>
+    </div>
+
+    <script src="main.js"></script>
 </body>
 </html>
